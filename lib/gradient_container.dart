@@ -3,6 +3,9 @@ import 'package:dice_app/styled_text.dart';
 
 class GradientContainer extends StatelessWidget {
   const GradientContainer({super.key});
+  void rollDice() {
+    //doSomething
+  }
 
   @override
   Widget build(context) {
@@ -13,7 +16,20 @@ class GradientContainer extends StatelessWidget {
           Color.fromRGBO(34, 2, 107, 1)
         ], begin: Alignment.topLeft, end: Alignment.bottomRight),
       ),
-      child: const Center(child: StyledText()),
+      child: Center(
+          child: Column(
+        children: [
+          Image.asset(
+            'assets/images/dice-1.png',
+            width: 200,
+          ),
+          TextButton(
+            onPressed: rollDice,
+            child: const Text('Roll Dice'),
+          )
+        ],
+      )),
+      // child: const Center(child: StyledText('sekimuli')),
     );
   }
 }
